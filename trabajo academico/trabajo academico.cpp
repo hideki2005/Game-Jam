@@ -20,7 +20,7 @@ int x = 7;
 int y = 7;
 
 int asteroides[15][2];
-int bala[10][2];
+int bala[1][2];
 
 void gotoxy(int x, int y) {
 
@@ -162,13 +162,13 @@ void movimiento() {
 		if (tecla == ABAJO && y + 3 < 33) y++;
 		if (tecla == 'a') {
 
-			/*gotoxy(bala[1][0], bala[1][1]); printf(" ");
+			gotoxy(bala[1][0], bala[1][1]); printf(" ");
 
-			bala[1][0] == 0;
-			bala[1][1] == 0;
+			/*bala[1][0] == 0;
+			bala[1][1] == 0;*/
 
 			bala[1][0] = x+2;
-			bala[1][1] = y - 1;*/
+			bala[1][1] = y - 1;
 
 		}
 
@@ -236,7 +236,7 @@ int main() {
 
 	pos_ast();
 
-	int n = 15;
+	int n = 1;
 	bool game_over = false;
 
 	while (!game_over) {
@@ -284,21 +284,15 @@ int main() {
 
 		}
 	
-		for (int i = 0; i < 10; i++)
-		{
-			gotoxy(bala[1][0], bala[1][1]); printf(" ");
-
-
-			if (bala[1][1] > 4) {
-
-				bala[1][1] -= 1;
-				gotoxy(bala[1][0], bala[1][1]); printf("*");
-
-			}
-		}
-
+	
+		
+	
 		gotoxy(bala[1][0], bala[1][1]); printf(" ");
+		
 
+		/*gotoxy(bala[1][0], bala[1][1]); printf("*");*/
+
+	
 
 		if (bala[1][1] > 4) {
 
@@ -323,14 +317,7 @@ int main() {
 
 		
 
-		if (bala[1][0] > 4) {
-
-
-			gotoxy(bala[1][0], bala[1][1]); printf(" ");
-			bala[1][0] == 0;
-			bala[1][1] == 0;
-
-		}
+		
 
 
 		movimiento();
